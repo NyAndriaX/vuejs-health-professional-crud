@@ -1,5 +1,5 @@
 import Vuex from "vuex";
-import action from "@/store/action";
+import actions from "@/store/actions";
 
 const store = new Vuex.Store({
 	state: {
@@ -10,7 +10,7 @@ const store = new Vuex.Store({
 			state.tableau = tableau;
 		},
 	},
-	action,
+	actions,
 	getters: {
 		tableau: (state) => state.tableau,
 	},
