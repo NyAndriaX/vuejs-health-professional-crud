@@ -7,7 +7,7 @@
             <th>Nombre de jours</th>
             <th>Taux journalier</th>
             <th>Prestation</th>
-            <th>Action</th>
+            <th>Actions</th>
           </tr>
 
       </thead>
@@ -52,9 +52,11 @@
               <button class="btn btn-save" @click="sauvegarderItem(item)">save</button>
             </template>
             <template v-else>
-              <div></div>
-             <button class="btn-edit-delete" style="border:1.5px solid yellowgreen" @click="modifierItem(item)"><li class="bi bi-brush"></li></button>
-              <button class="btn-edit-delete" style="border:1.5px solid red" @click="supprimerItem(item)"><li class="bi bi-trash" ></li></button>
+              <div class="content-btn">
+                  <button class="btn-edit-delete" style="color:#2c3e50;" @click="modifierItem(item)"><li class="bi bi-pencil-square"></li></button>
+                  <button class="btn-edit-delete" style="color:#2c3e50;" @click="supprimerItem(item)"><li class="bi bi-trash2" ></li></button>                
+              </div>
+
             </template>
           </td>
         </tr>
@@ -103,7 +105,7 @@ export default {
   }
   td{
     width:200px;
-    padding: 12px 0px;
+    padding: 6px 0px;
   }
   .btn{
     border: none;
@@ -126,6 +128,8 @@ export default {
   }
   thead tr th{
     padding: 25px 10px;
+    font-weight: 600;
+    font-size: 14px;
   }
   input{
     padding: 4px 4px;
@@ -137,7 +141,7 @@ export default {
   }
   li{
     list-style-type: none;
-    padding:7px 7px;
+    padding:5px 5px;
   }
   .btn-edit-delete{
     background-color: #ffff;
@@ -151,4 +155,15 @@ export default {
   tbody tr td{
     border-bottom:1px solid #eaeaea;
   }
+  .content-btn{
+    display: none;
+  }
+  tbody tr:hover .content-btn{
+    display:flex !important;
+    justify-content: center;
+  }
+  tbody tr:hover{
+    background-color: #faf5f5;
+  }
+
 </style>
